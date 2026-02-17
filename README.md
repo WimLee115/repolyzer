@@ -23,6 +23,12 @@ _______   ____ ______ |  |  ___.__._________ _____
 
 ---
 
+<p align="center">
+  <a href="https://asciinema.org/a/spiHTxUFi86q4w9r" target="_blank">
+    <img src="https://asciinema.org/a/spiHTxUFi86q4w9r.svg" alt="repolyzer demo" width="700">
+  </a>
+</p>
+
 ## Why?
 
 Ever jump into a new codebase and wonder: *"What's going on here?"*
