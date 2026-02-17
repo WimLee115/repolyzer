@@ -39,3 +39,6 @@ repolyzer = "repolyzer.cli:main"
 Homepage = "https://github.com/repolyzer/repolyzer"
 Repository = "https://github.com/repolyzer/repolyzer"
 Issues = "https://github.com/repolyzer/repolyzer/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
