@@ -36,9 +36,9 @@ dependencies = [
 repolyzer = "repolyzer.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/repolyzer/repolyzer"
-Repository = "https://github.com/repolyzer/repolyzer"
-Issues = "https://github.com/repolyzer/repolyzer/issues"
+Homepage = "https://github.com/WimLee115/repolyzer"
+Repository = "https://github.com/WimLee115/repolyzer"
+Issues = "https://github.com/WimLee115/repolyzer/issues"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

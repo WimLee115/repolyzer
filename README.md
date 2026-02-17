@@ -1,8 +1,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.9+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/pypi/v/repolyzer?style=for-the-badge&color=brightgreen" alt="PyPI">
-  <img src="https://img.shields.io/github/license/repolyzer/repolyzer?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/github/stars/repolyzer/repolyzer?style=for-the-badge&color=yellow" alt="Stars">
+  <img src="https://img.shields.io/github/license/WimLee115/repolyzer?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/stars/WimLee115/repolyzer?style=for-the-badge&color=yellow" alt="Stars">
 </p>
 
 <h1 align="center">
@@ -147,7 +147,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ```bash
 # Clone the repo
-git clone https://github.com/repolyzer/repolyzer.git
+git clone https://github.com/WimLee115/repolyzer.git
 cd repolyzer
 
 # Install in development mode
