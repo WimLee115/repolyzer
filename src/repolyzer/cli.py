@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+import sys
 import time
 from pathlib import Path
 
@@ -34,7 +36,10 @@ def main(path: str, no_git: bool, no_health: bool, no_todos: bool, as_json: bool
     a comprehensive overview of languages, structure, git history, dependencies,
     health, and code markers.
     """
-    console = Console()
+    # Force UTF-8 on Windows to prevent UnicodeEncodeError with Rich bar characters
+    if sys.platform == "win32":
+        os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    console = Console(force_terminal=True)
     root = Path(path).resolve()
     project_name = root.name
 
@@ -80,8 +85,8 @@ def _output_json(console, languages, structure, git, dependencies, health, todos
             "total_files": languages.total_files,
             "total_lines": languages.total_lines,
             "breakdown": [
-                {"name": l.name, "files": l.files, "lines": l.lines}
-                for l in languages.languages
+                {"name": lang.name, "files": lang.files, "lines": lang.lines}
+                for lang in languages.languages
             ],
         },
         "structure": {

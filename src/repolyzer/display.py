@@ -6,8 +6,6 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
-from rich.columns import Columns
-from rich.bar import Bar
 from rich import box
 
 from .analyzers.languages import LanguageReport
@@ -184,9 +182,9 @@ def display_dependencies(console: Console, report: DependencyReport):
         table.add_row(name, counts)
 
     total = Text()
-    total.append(f"\n  Total: ", style="dim")
+    total.append("\n  Total: ", style="dim")
     total.append(f"{report.total_deps}", style="bold bright_white")
-    total.append(f" dependencies", style="dim")
+    total.append(" dependencies", style="dim")
     if report.total_dev_deps:
         total.append(f", {report.total_dev_deps} dev", style="dim")
 
@@ -216,7 +214,7 @@ def display_health(console: Console, report: HealthReport):
     # Score bar
     score_color = "bright_green" if report.score >= 70 else "bright_yellow" if report.score >= 40 else "bright_red"
     score_text = Text()
-    score_text.append(f"\n  Health score: ", style="dim")
+    score_text.append("\n  Health score: ", style="dim")
     score_text.append(f"{report.score}%", style=f"bold {score_color}")
     score_text.append("  ")
     score_text.append_text(_bar_chart(report.score / 100, width=20, color=score_color))

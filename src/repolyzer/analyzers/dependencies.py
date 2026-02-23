@@ -51,7 +51,7 @@ def _parse_package_json(path: Path) -> tuple[int, int]:
 def _parse_requirements_txt(path: Path) -> tuple[int, int]:
     try:
         lines = path.read_text(encoding="utf-8").splitlines()
-        count = sum(1 for l in lines if l.strip() and not l.strip().startswith("#") and not l.strip().startswith("-"))
+        count = sum(1 for line in lines if line.strip() and not line.strip().startswith("#") and not line.strip().startswith("-"))
         return count, 0
     except OSError:
         return 0, 0
@@ -121,7 +121,7 @@ def _parse_go_mod(path: Path) -> tuple[int, int]:
 def _parse_gemfile(path: Path) -> tuple[int, int]:
     try:
         lines = path.read_text(encoding="utf-8").splitlines()
-        count = sum(1 for l in lines if l.strip().startswith("gem "))
+        count = sum(1 for line in lines if line.strip().startswith("gem "))
         return count, 0
     except OSError:
         return 0, 0
@@ -173,8 +173,8 @@ def _parse_gradle(path: Path) -> tuple[int, int]:
     try:
         content = path.read_text(encoding="utf-8")
         lines = content.splitlines()
-        deps = sum(1 for l in lines if "implementation " in l or "compile " in l or "api " in l)
-        dev = sum(1 for l in lines if "testImplementation " in l or "testCompile " in l)
+        deps = sum(1 for line in lines if "implementation " in line or "compile " in line or "api " in line)
+        dev = sum(1 for line in lines if "testImplementation " in line or "testCompile " in line)
         return deps, dev
     except OSError:
         return 0, 0
